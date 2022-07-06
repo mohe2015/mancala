@@ -56,7 +56,8 @@ impl Mancala {
                 direction = if player == 1 { -1 } else { 1 };
                 position = 15;
             } else {
-                // chose kichwa
+                let clockwise = player == 1 && direction == -1 || player == 0 && direction == 1;
+                position = if clockwise { 15 } else { 8 };
             }
             // sowing again
         } else {
